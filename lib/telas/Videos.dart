@@ -24,11 +24,7 @@ class _VideosState extends State<Videos> {
     _controller.play();
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +37,7 @@ class _VideosState extends State<Videos> {
           const Text('With assets mp4'),
           Container(
             padding: const EdgeInsets.all(20),
+            height: 500,
             child: AspectRatio(
               aspectRatio: _controller.value.aspectRatio,
               child: Stack(
@@ -56,4 +53,11 @@ class _VideosState extends State<Videos> {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
 }
